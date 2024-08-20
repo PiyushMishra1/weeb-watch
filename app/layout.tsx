@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "WeebWatch",
-  description: "A web streaming plateform",
+  description: "A web streaming platform",
 };
 
 export default function RootLayout({
