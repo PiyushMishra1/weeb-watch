@@ -14,7 +14,7 @@ export default function Home() {
         <h1 className="text-3xl text-black font-bold">Welcome to WeebWatch!</h1>
         <p className="text-lg text-black mb-5">
           A web streaming plateform for tracking & watching your favorite anime
-          characters and their progress.
+          characters.
         </p>
         <a
           href="https://github.com/kakakakakak/weeb-watch"
