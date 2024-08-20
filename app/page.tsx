@@ -17,7 +17,7 @@ export default function Home() {
           characters.
         </p>
         <a
-          href="https://github.com/kakakakakak/weeb-watch"
+          href="https://github.com/akakakak/weeb-watch"
           className=" self-center text-sm px-4 py-2  bg-blue-600 hover:bg-blue-700 rounded-md"
         >
           View on GitHub
