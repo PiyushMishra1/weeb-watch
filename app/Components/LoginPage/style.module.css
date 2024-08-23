@@ -4,3 +4,7 @@
   font-family: "Inter", sans-serif;
   letter-spacing: 2px;
 }
+
+.search:focus-visible {
+  border: solid 1px white !important;
+}
