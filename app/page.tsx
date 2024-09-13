@@ -11,11 +11,14 @@ export default function Home() {
           <h2 className='text-center'><i className={`${style.font} font-thin text-[10vw] sm:text-[5vw] text-center`}>Weeb Watch</i></h2>
           <SearchBar />
 
-          <div className="grid grid-row-3 mt-6">
+          <div className="grid grid-row-3 mt-6 justify-center">
+            <Card />
+            <Card />
             <Card />
           </div>
         </div>
-        <div className="bg-primary text-white">hello</div>
+        <div className="bg-primary text-white">
+        </div>
       </div>
     </main>
   </>
