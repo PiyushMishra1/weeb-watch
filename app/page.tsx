@@ -2,7 +2,8 @@ import Header from "./Components/Header";
 import SearchBar from "./Components/SearchBar";
 import Card from "./Components/Card";
 import style from "./style.module.css";
-import { CarouselDemo } from "./Components/Carousel";
+import CarouselDemo from "./Components/Carousel";
+
 export default function Home() {
   return (
     <>
@@ -11,7 +12,11 @@ export default function Home() {
         <div className="grid md:grid-cols-2 sm:grid-rows-2">
           <div className="bg-danger text-white">
             <h2 className="text-center">
-              <i className={`${style.font} font-thin text-[5vw] sm:text-[5vw] text-center`}>Weeb Watch</i>
+              <i
+                className={`${style.font} font-thin text-[5vw] sm:text-[5vw] text-center`}
+              >
+                Weeb Watch
+              </i>
             </h2>
             <SearchBar />
             <div className="grid grid-row-3 mt-6 justify-center">
@@ -20,7 +25,7 @@ export default function Home() {
               <Card />
             </div>
           </div>
-          <div className="text-white hidden md:flex justify-center">
+          <div className="text-white hidden md:flex justify-center items-center">
             <CarouselDemo />
           </div>
         </div>

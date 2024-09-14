@@ -1,54 +1,70 @@
 "use client";
-import * as React from "react";
-
-import { Card, CardContent } from "@/components/ui/card";
+import React, { useCallback } from "react";
+import useEmblaCarousel from "embla-carousel-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import Image from "next/image";
+import img from "../../public/Images/ac.png";
+import im from "@/public/Images/me.png";
 
-export function CarouselDemo() {
+interface CarouselSlide {
+  title: string;
+  image: string;
+}
+
+const slides: CarouselSlide[] = [
+  { title: "Hogwart Legacy", image: `${img.src}` },
+  { title: "Assassin's Creed", image: `${im.src}` },
+  // Add more slides as needed
+];
+
+export default function CarouselDemo() {
+  console.log(img);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
+    Autoplay({ stopOnInteraction: false, delay: 6000 }),
+  ]);
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
+
   return (
-    <Carousel
-      className="w-[60vw] hidden md:w-[30vw] md:h-[90%] md:flex lg:w-[87%] lg:h-full max-w-lg"
-      opts={{
-        loop: true,
-      }}
-      plugins={[
-        Autoplay({
-          delay: 6000,
-        }),
-      ]}
+    <div
+      className="relative overflow-hidden w-[40vw] h-full rounded-xl"
+      ref={emblaRef}
     >
-      <CarouselContent>
-        {Array.from({ length: 5 }).map((_, index) => (
-          <>
-            <CarouselItem className="aspect-square h-[490px]">
-              <Image
-                className="md:w-[30vw] md:h-[90%] lg:w-full lg:h-full rounded-md"
-                objectFit="cover"
-                src={require("@/public/Images/ac.png")}
-                alt="no image"
+      <div className="flex ">
+        {slides.map((slide, index) => (
+          <div key={index} className="flex-[0_0_100%] min-w-0 ">
+            <div className="relative w-full h-[34vw] my-[40px]">
+              <img
+                src={slide.image}
+                alt={slide.title}
+                className="relative h-full w-full rounded-xl"
               />
-            </CarouselItem>
-            <CarouselItem className="aspect-square  h-[490px]">
-              <Image
-                className="md:w-[30vw] md:h-[90%] lg:w-full lg:h-full rounded-md"
-                objectFit="cover"
-                src={require("@/public/Images/me.png")}
-                alt="no image"
-              />
-            </CarouselItem>
-          </>
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0A0F2B] to-transparent p-4">
+                <h2 className="text-2xl font-bold text-white">{slide.title}</h2>
+                <p>{slide.title}</p>
+              </div>
+            </div>
+          </div>
         ))}
-      </CarouselContent>
-      <CarouselPrevious className="text-white-400 bg-transparent border-0" />
-      <CarouselNext className="text-white-400 bg-transparent border-0" />
-    </Carousel>
+      </div>
+      <button
+        onClick={scrollPrev}
+        className="absolute top-1/2 left-4 -translate-y-1/2 bg-black/50 p-2 rounded-full text-white"
+      >
+        <ChevronLeft size={24} />
+      </button>
+      <button
+        onClick={scrollNext}
+        className="absolute top-1/2 right-4 -translate-y-1/2 bg-black/50 p-2 rounded-full text-white"
+      >
+        <ChevronRight size={24} />
+      </button>
+    </div>
   );
 }
