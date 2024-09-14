@@ -15,7 +15,7 @@ import Image from "next/image";
 export function CarouselDemo() {
   return (
     <Carousel
-      className="w-full max-w-lg"
+      className="w-[60vw] hidden md:w-[30vw] md:h-[90%] md:flex lg:w-[87%] lg:h-full max-w-lg"
       opts={{
         loop: true,
       }}
@@ -28,17 +28,17 @@ export function CarouselDemo() {
       <CarouselContent>
         {Array.from({ length: 5 }).map((_, index) => (
           <>
-            <CarouselItem className="aspect-square">
+            <CarouselItem className="aspect-square h-[490px]">
               <Image
-                className="w-full h-full rounded-md"
+                className="md:w-[30vw] md:h-[90%] lg:w-full lg:h-full rounded-md"
                 objectFit="cover"
                 src={require("@/public/Images/ac.png")}
                 alt="no image"
               />
             </CarouselItem>
-            <CarouselItem className="aspect-square">
+            <CarouselItem className="aspect-square  h-[490px]">
               <Image
-                className="w-full h-full rounded-md"
+                className="md:w-[30vw] md:h-[90%] lg:w-full lg:h-full rounded-md"
                 objectFit="cover"
                 src={require("@/public/Images/me.png")}
                 alt="no image"

@@ -11,21 +11,16 @@ export default function Home() {
         <div className="grid md:grid-cols-2 sm:grid-rows-2">
           <div className="bg-danger text-white">
             <h2 className="text-center">
-              <i
-                className={`${style.font} font-thin text-[10vw] sm:text-[5vw] text-center`}
-              >
-                Weeb Watch
-              </i>
+              <i className={`${style.font} font-thin text-[5vw] sm:text-[5vw] text-center`}>Weeb Watch</i>
             </h2>
             <SearchBar />
-
             <div className="grid grid-row-3 mt-6 justify-center">
               <Card />
               <Card />
               <Card />
             </div>
           </div>
-          <div className="text-white flex justify-center">
+          <div className="text-white hidden md:flex justify-center">
             <CarouselDemo />
           </div>
         </div>
