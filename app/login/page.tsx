@@ -1,6 +1,6 @@
-'use client';
-import React, { useEffect } from 'react';
-import useLogin from '../Controller/LoginController';
+"use client";
+import React, { useEffect } from "react";
+import useLogin from "../Controller/LoginController";
 
 const Login: React.FC = () => {
   const { error, setError, email, setEmail, password, setPassword, handleSubmit, loading } = useLogin();
@@ -58,7 +58,7 @@ const Login: React.FC = () => {
         </form>
 
         <div className="mt-4 text-center">
-          <span className="text-sm text-white">Don't have an account?</span>
+          <span className="text-sm text-white">Don&apos;t have an account?</span>
           <a href="/signup" className="text-sm text-blue-500 hover:underline">
             Sign Up
           </a>
