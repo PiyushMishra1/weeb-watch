@@ -8,7 +8,7 @@
     return (
       <>
         <Header />
-        <main className="bg-[#0A0F2B] justify-between p-5 h-screen">
+        <main className="bg-[#0A0F2B] justify-between p-5 min-h-screen">
         <div className="grid md:grid-cols-2 ">
             <div className="bg-danger text-white">
               <h2 className="text-center">
